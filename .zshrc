@@ -1,0 +1,1 @@
+/home/anton/Dotfiles/zshrc
