@@ -1,4 +1,4 @@
-################################################################################
+###############################################################################
 # EXPORT
 ################################################################################
 export EDITOR="/usr/bin/nvim"
@@ -58,6 +58,11 @@ alias cdr='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; 
 # nvim
 alias nv='nvim'
 alias vi='nvim'
+# dnf
+alias dnf='sudo dnf'
+alias dnfu='sudo dnf upgrade'
+alias dnfi='sudo dnf install'
+alias dnfs='sudo dnf search'
 ################################################################################
 # HISTORY
 ################################################################################
