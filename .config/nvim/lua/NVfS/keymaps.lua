@@ -41,6 +41,9 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
+-- x to void
+keymap("n", "x", '"_x', opts)
+
 -- Search and Replace
 keymap('n', '<C-S>', ':%s/', { noremap = true })
 
@@ -53,3 +56,12 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Plugins --
+
+-- Telescope
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
+-- Lsp Stuff
+keymap("n", "<leader>gD", ":Telescope lsp_definitions<CR>", opts)
