@@ -52,6 +52,12 @@ return packer.startup(function(use)
   use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
   use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
 
+  -- Treesitter
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+    }
+
   -- LSP
   use 'neovim/nvim-lspconfig'
   -- use 'williamboman/nvim-lsp-installer'

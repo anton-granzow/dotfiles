@@ -1,9 +1,9 @@
 # Inserts a blank line between shell prompts
-add_newline = false
+add_newline = true
 
 # Move the directory to the second line
 format = "$directory$character$line_break"
-right_format = "$all"
+right_format = "$cmd_duration$all"
 
 [line_break]
 # disabled = true
@@ -13,3 +13,7 @@ disabled = false
 
 [directory]
 truncation_length = 8
+
+[cmd_duration]
+disabled = false
+min_time = 0
