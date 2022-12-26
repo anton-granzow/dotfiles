@@ -1,7 +1,8 @@
-################################################################################
+##############################################################################
 # EXPORT
 ################################################################################
 export EDITOR="/usr/bin/nvim"
+export PATH="$PATH:$HOME/.local/bin"
 ################################################################################
 # AUTOLOAD
 ################################################################################
@@ -36,7 +37,8 @@ bindkey "^[[F" end-of-line
 # ALIASES
 ################################################################################
 # Play safe!
-alias 'rm=rm -i'
+# alias 'rm=rm -i'
+alias 'rm=trash -v'
 alias 'mv=mv -i'
 alias 'cp=cp -i'
 # dotfiles Repository
@@ -52,12 +54,23 @@ alias ls='lsd' # changes using lsd as ls util
 alias ll='ls -lh'
 alias la='ls -a'
 alias lt='ls --tree'
+# top
+alias top="bpytop"
 ### ranger
 # use ranger to change directory
 alias cdr='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 # nvim
 alias nv='nvim'
 alias vi='nvim'
+alias lv='lvim'
+# kitty
+alias icat="kitty +kitten icat"
+alias ktheme="kitty +kitten themes"
+# dnf
+alias dnf='sudo dnf'
+alias dnfu='sudo dnf upgrade'
+alias dnfi='sudo dnf install'
+alias dnfs='sudo dnf search'
 ################################################################################
 # HISTORY
 ################################################################################
@@ -76,7 +89,7 @@ setopt HIST_IGNORE_ALL_DUPS
 # Do not remember commands that start with a whitespace
 setopt HIST_IGNORE_SPACE
 # Correct spelling of all arguments in the command line
-setopt CORRECT_ALL
+# setopt CORRECT_ALL
 # Enable autocompletion
 zstyle ':completion:*' completer _complete _correct _approximate 
 
@@ -94,6 +107,9 @@ zstyle :compinstall filename '/home/anton/.zshrc'
 ################################################################################
 # OTHER
 ################################################################################
+
+eval "$(noisetorch -i)"
+
 ################################################################################
 # COLORS
 ################################################################################

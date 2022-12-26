@@ -4,4 +4,4 @@ require "NVfS.plugins"
 require "NVfS.colorscheme"
 require "NVfS.lsp"
 require "NVfS.cmp"
-
+require "NVfS.comment"
