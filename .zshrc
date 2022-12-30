@@ -3,6 +3,7 @@
 ################################################################################
 export EDITOR="/usr/bin/nvim"
 export PATH="$PATH:$HOME/.local/bin"
+export FZF_DEFAULT_COMMAND="find -L ."
 ################################################################################
 # AUTOLOAD
 ################################################################################
@@ -121,6 +122,5 @@ eval "$(starship init zsh)"
 # PROMPT='%F{green}%n%f@%F{magenta}%m%f %F{blue}%B%~%b%f %# '
 # RPROMPT='[%F{yellow}%?%f]'
 
-
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/anton/.config/broot/launcher/bash/br
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/sources

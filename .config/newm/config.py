@@ -179,6 +179,10 @@ def key_bindings(layout: Layout) -> list[tuple[str, Callable[[], Any]]]:
         ("XF86AudioRaiseVolume", lambda: pactl.volume_adj(5)),
         ("XF86AudioLowerVolume", lambda: pactl.volume_adj(-5)),
         ("XF86AudioMute", lambda: pactl.mute()),
+
+        # Warpd key_bindings
+        ("L-x", lambda: os.system("warpd --normal &")),
+
     ]
 
 # bar = {'enabled': False}
