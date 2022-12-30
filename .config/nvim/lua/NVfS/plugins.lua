@@ -91,7 +91,7 @@ return packer.startup(function(use)
 
 
 
-  -- PlugColorsche
+  -- Colorscheme
   use 'Mofiqul/dracula.nvim'
 
 
