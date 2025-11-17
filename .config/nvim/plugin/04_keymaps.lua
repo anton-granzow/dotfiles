@@ -22,8 +22,8 @@ vim.keymap.set( "n", "<leader>Lf", vim.lsp.buf.format, {desc = "Format current b
 
 --- Oil
 vim.keymap.set("n", "<leader>e", ':Oil<CR>', { desc = "Explorer", })
-vim.keymap.set("n", "<leader>E", ':Oil %:h<CR>',
-{ desc = "Explorer at File"})
+vim.keymap.set("n", "<leader>E", ':Oil %:h<CR>', { desc = "Explorer at File"})
+vim.keymap.set("n", "-", ':Oil %:h<CR>', { desc = "Explorer at File"})
 
 --- Mini Pick Files
 vim.keymap.set("n", "<C-p>", ':Pick files<CR>', { desc = "Pick Files", })
