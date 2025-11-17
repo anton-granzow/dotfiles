@@ -1,8 +1,0 @@
-require "anton.options"
-require "anton.keymaps"
-require "anton.plugins"
-require "anton.lsp"
-require "anton.treesitter"
-require "anton.colorscheme"
-require "anton.autopairs"
-require "anton.bufferline"
