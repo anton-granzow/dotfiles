@@ -1,0 +1,56 @@
+-- Alternative 1: using Marks
+-- for c = string.byte('A'), string.byte('Z') do
+--   local key = string.char(c)
+--   vim.keymap.set('n', 'M'..key, function()
+--     vim.cmd('normal! `'..key)
+--     vim.cmd('keepjumps normal! `"')
+--   end, { noremap = true, silent = true })
+--   vim.keymap.set('n', 'm'..key, function()
+--     local view = vim.fn.winsaveview()
+--     vim.cmd('normal! gm`')
+--     vim.cmd('keepjumps normal! gg')
+--     vim.cmd('normal! m'..key)
+--     vim.cmd('keepjumps normal! g``')
+--     vim.fn.winrestview(view)
+--   end, { noremap = true, silent = true })
+-- end
+
+-- Alternative 2: use arglist
+-- function ShowArgList()
+--   local args = vim.fn.argv()
+--   local items = {}
+--   for i, arg in ipairs(args) do
+--     table.insert(items, i .. ": " .. vim.fn.fnamemodify(arg, ":t"))
+--   end
+--
+--   vim.ui.select(items, {prompt = "Arguments:"}, function(choice, idx)
+--     if idx then vim.cmd("argument " .. idx) end
+--   end)
+-- end
+-- vim.keymap.set("n", "<leader>m", "<cmd>argadd | argdedupe<CR>", {desc = "Add current file to argument list"})
+-- vim.keymap.set("n", "<A-1>", "<cmd>argument 1<CR>", {desc = "Edit Argument 1"})
+-- vim.keymap.set("n", "<A-2>", "<cmd>argument 1<CR>", {desc = "Edit Argument 1"})
+-- vim.keymap.set("n", "<A-3>", "<cmd>argument 1<CR>", {desc = "Edit Argument 1"})
+-- vim.keymap.set("n", "<A-4>", "<cmd>argument 1<CR>", {desc = "Edit Argument 1"})
+-- vim.keymap.set("n", "M", "<cmd>args<CR>", {desc = "Show Argument list"})
+
+-- Alternative 3: Simple harpoon plugin (created with claude)
+-- local harpoon = require('simple_harpoon')
+
+-- -- Keybind "Ma": Add current file to list
+-- vim.keymap.set('n', 'Ma', harpoon.add_file, { desc = 'Add current file to harpoon marks' })
+
+-- -- Keybind "Me": Open the buffer for editing
+-- vim.keymap.set('n', 'Me', harpoon.edit_marks, { desc = 'Edit harpoon marks file' })
+
+-- -- Keybind "M[count]": Jump to File at Position [count]
+-- for i = 1, 9 do
+--     vim.keymap.set('n', 'M' .. i, function() harpoon.jump_to_file(i) end, { desc = 'Jump to harpoon mark ' .. i })
+--     vim.keymap.set('n', '<A-' .. i .. '>', function() harpoon.jump_to_file(i) end, { desc = 'Jump to harpoon mark ' .. i })
+-- end
+--
+-- -- Optional: Add a keybind to list all marks
+-- vim.keymap.set('n', 'Ml', harpoon.list_marks, { desc = 'List all harpoon marks' })
+--
+-- -- Keybind "Ms": Show selectable list of marks
+-- vim.keymap.set('n', 'Ms', harpoon.select_mark, { desc = 'Select from harpoon marks' })
